@@ -1,0 +1,1 @@
+sprite_size = 30

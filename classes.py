@@ -1,7 +1,9 @@
 import pygame
 from constants import *
+import random
 
 pygame.init()
+
 
 class Maze:
     def __init__(self):
@@ -19,11 +21,11 @@ class Maze:
                 self.struct = struct
 
     def display_maze(self, window):
-        wall = pygame.image.load("ressource\wall.png").convert()
-        framing = pygame.image.load("ressource\grill.jpg").convert()
-        start = pygame.image.load("ressource\start.jpg").convert()
-        end = pygame.image.load("ressource\end.jpg").convert()
-        floor = pygame.image.load("ressource\\floor.jpg").convert()
+        wall = pygame.image.load("resources\wall.png").convert()
+        framing = pygame.image.load("resources\grill.jpg").convert()
+        start = pygame.image.load("resources\start.jpg").convert()
+        end = pygame.image.load("resources\end.jpg").convert()
+        floor = pygame.image.load("resources\\floor.jpg").convert()
         line_number = 0
         for line in self.struct:
             sprite_number = 0
@@ -42,8 +44,6 @@ class Maze:
                     window.blit(floor, (x, y))
                 sprite_number += 1
             line_number += 1
-
-
 
 
 class Character:
@@ -84,11 +84,35 @@ class Character:
                         self.y += sprite_size
 
 
-
 class Object:
-    def __init__(self, name, state):
+    def __init__(self, name = " ", pic = 0):
         self.name = name
-        self.state = state
+        self.state = 1
+        self.x = 0
+        self.y = 0
+        self.pic = pic
+
+    def generate_object(self, maze):
+        searching = True
+        while searching:
+            self.x = random.randrange(0, 510, 30)
+            self.y = random.randrange(0, 510, 30)
+            sprite_x = self.x // sprite_size
+            sprite_y = self.y // sprite_size
+            print(sprite_x)
+            print(sprite_y)
+            if maze.struct[sprite_y][sprite_x] != '-' and maze.struct[sprite_y][sprite_x] != '+' \
+                    and maze.struct[sprite_y][sprite_x] != 'o' and self.x != x_start \
+                    and self.x != x_end and self.y != y_start and self.y != y_end:
+                maze.struct[sprite_y][sprite_x] = 'o'
+                searching = False
+
+    def display_object(self, window):
+        if self.state:
+            object = pygame.image.load(self.pic).convert_alpha()
+            window.blit(object, (self.x, self.y))
+
+
 
 
 

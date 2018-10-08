@@ -26,6 +26,6 @@ pic_loss = "resources\loss.png"
 
 victory_text = "You won ! Press Enter to play again"
 loss_text = "You lost, press Enter to try again"
-rules = ["Get the 3 objects and go the guardian to get out of the maze.", \
-         "If you go to the guardian without all the objects, you'll die."]
+rules = ["Get the 3 objects and go the guardian to get out of the maze.",
+         "If you go to the guardian without all the objects, you'll die.", "Press Escape to quit the game at any time."]
 objects = ["Object count : ", "Your objects : "]

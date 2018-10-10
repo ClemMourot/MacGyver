@@ -1,3 +1,6 @@
+""" Declaration of constants needed throughout the game """
+
+# Number of pixels
 sprite_size = 30
 x_start = 30
 y_start = 30
@@ -7,8 +10,10 @@ side_size = 600
 playground_size = 450
 dashboard_start = 530
 
+# Window title
 title = "Mac Gyver game"
 
+# Pictures paths
 pic_background = "resources\\background.jpg"
 pic_count_window = "resources\count.png"
 pic_mac_gyver = "resources\mac_gyver.png"
@@ -24,6 +29,7 @@ pic_syringe = "resources\syringe.png"
 pic_victory = "resources\\victory.png"
 pic_loss = "resources\loss.png"
 
+# Messages to print
 victory_text = "You won ! Press Enter to play again"
 loss_text = "You lost, press Enter to try again"
 rules = ["Get the 3 objects and go the guardian to get out of the maze.",

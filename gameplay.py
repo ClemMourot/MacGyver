@@ -2,10 +2,8 @@ import classes
 import pygame
 
 
-""" Main function instantiates game and calls every method needed to run the game within the gameloop """
-
-
 def main():
+    """ Main function instantiates game and calls every method needed to run the game within the game loop """
     pygame.init()
     on = True
     while on:    # Runs as long as the program is on
@@ -20,7 +18,7 @@ def main():
             if status == 0:    # User pressed escape to leave the game
                 playing = False
                 on = False
-            if status == 1:     # User pressed entry to play again
+            elif status == 1:     # User pressed entry to play again
                 playing = False
 
 
